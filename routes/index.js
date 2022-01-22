@@ -11,6 +11,7 @@ module.exports = router;
 
 // These are going to run when you start the express app
 const { uniqueNamesGenerator, adjectives, colors, animals, starWars, countries, names, languages, NumberDictionary } = require('unique-names-generator');
+const numberOneToThousand = NumberDictionary.generate({min: 1, max: 1000})
 
 // const randomName = uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals] }); // big_red_donkey
 
@@ -31,11 +32,16 @@ const { uniqueNamesGenerator, adjectives, colors, animals, starWars, countries, 
 //   dictionaries: [colors, adjectives, languages, countries, starWars]
 // })
 
+const myNumber = uniqueNamesGenerator({
+  dictionaries: [colors, numberOneToThousand, ['Dummies']]
+})
+
 // console.log('randomName is: ', randomName)
 // console.log('shortName is: ', shortName)
 // console.log('countryName is: ', countryName)
 // console.log('languageName is: ', languageName)
 // console.log('starWarName is: ', starWarName)
+console.log('myNumber is: ', myNumber)
 
 
 // Own dictionary
